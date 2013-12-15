@@ -7,7 +7,7 @@ require 'mongoid'
 
 environment = ENV['RAKE_ENV'] || :development
 
-Dir["#{::File.dirname(__FILE__)}/model/*.rb"].each {|file| require file }
+Dir["#{::File.dirname(__FILE__)}/domain/model/*.rb"].each {|file| require file }
 
 
 # load mongo

@@ -1,32 +1,11 @@
 <h1>Book List</h1>
 <ul>
   <% books.each do |book| %>
-    <li>
-      <span title="<%= book.synopsis %>">
-        <%= book.author %> -
-        <%= book.title %> (<%= book.published_at.year %>)
-        owned by <%= book.owner.name %> <%= book.owner.last_name %> (<%= book.owner.api_key %>)
-      </span>
-    </li>
+    <%= erb :book, locals:{book: book} %>
   <% end %>
 </ul>
 <h2>New Entry</h2>
-<form method="post" action="/admin/book">
-  <input type="text" name="author" placeholder="Author" /> -
-  <input type="text" name="title" placeholder="Title"/> (<input type="text" name="year" placeholder="Year"/>)
-  owned by
-  <select name="owner">
-    <option value="" > -- Choose Owner -- </option>
-    <% users.each do |user| %>
-        <option value="<%= user._id %>"><%= user.name %> <%= user.last_name %></option>
-    <% end %>
-  </select>
-  <input type="submit" />
-</form>
+<%= erb :new_book, locals: {users: users} %>
 
 <h2>New User</h2>
-<form method="post" action="/admin/user">
-  <input type="text" name="name" placeholder="Name" />
-  <input type="text" name="last_name" placeholder="Last Name"/>
-  <input type="submit" />
-</form>
+<%= erb :new_user %>

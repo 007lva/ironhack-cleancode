@@ -1,0 +1,3 @@
+class NotFound < Exception
+
+end

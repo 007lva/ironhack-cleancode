@@ -1,0 +1,7 @@
+<li>
+  <span title="<<%= book.synopsis %>">
+    <%= book.author %> -
+    <%= book.title %> (<%= book.published_at.year %>)
+    owned by <%= book.owner.name %> <%= book.owner.last_name %> (<%= book.owner.api_key %>)
+  </span>>
+</li>
