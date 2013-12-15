@@ -1,0 +1,10 @@
+development:
+  sessions:
+    default:
+      hosts:
+        - <%= ENV['MONGOID_HOST'] || 'localhost' %>:<%= ENV['MONGOID_PORT'] || '27017' %>
+      database: <%= ENV['MONGOID_DATABASE'] || 'ironhack' %>
+production:
+  sessions:
+    default:
+      uri: mongodb://heroku_app19979084:qfe47hhulv5va3qqsb6q9lopra@ds061188.mongolab.com:61188/heroku_app19979084
